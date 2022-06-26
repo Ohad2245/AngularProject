@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Businesses Details</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Role</th>
+        <th scope="col">Id Business</th>
+        <th scope="col">Salary Per Of Hour</th>
+        <th scope="col">Salary Per Month</th>
+    
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let businesses of businesses ">
+        <th scope="row">{{businesses.NameOfRole}}</th>
+        <td>{{businesses.IdBusiness}}</td>
+        <td>{{businesses.NumEmployee}}</td>
+        <td [ngStyle]="{'backgroundColor' :(businesses.IdBusiness * businesses.IdBusiness <= 3000) ? 'red' : 'blue' }">{{businesses.IdBusiness * businesses.IdBusiness + "$"}}</td>
+    </tr>
+    </tbody>
+</table>
+
+

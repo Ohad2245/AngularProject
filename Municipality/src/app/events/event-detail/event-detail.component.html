@@ -1,0 +1,26 @@
+<div class="container">
+        <h2>Events details</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Code Events</th>
+            <th scope="col">Name of Event</th>
+            <th scope="col">Location</th>
+            <th scope="col">Amount Guest</th>
+            <th scope="col">Manager Events</th>
+            <th scope="col">Edit</th>
+        
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let events of events">
+            <th scope="row">{{events.Code}}</th>
+            <td>{{events.NameEvent}}</td>
+            <td>{{events.Address}}</td>
+            <td [ngStyle]="{'backgroundColor' :(events.Guest >= 30 && events.Guest <=100) ? 'yellow' :(events.Guest <= 30) ? 'red' : 'green' }">{{events.Guest}}</td>
+            <td>{{events.Manager.Name}}</td>
+            <button routerLink="/events/{{events.Code}}" class="btn btn-primary" style="color:black">Edit</button>
+        </tr>
+        </tbody>
+    </table>
+

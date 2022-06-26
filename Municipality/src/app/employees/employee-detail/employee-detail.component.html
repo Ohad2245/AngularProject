@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Employee Details</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Name Employee</th>
+        <th scope="col">Role</th>
+        <th scope="col">Salary Per Of Hour</th>
+        <th scope="col">Salary Per Month</th>
+    
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employees of employee">
+        <th scope="row">{{employees.Name}}</th>
+        <td>{{employees.NameOfRole}}</td>
+        <td>{{employees.NumOfMonth}}</td>
+        <!-- <td>{{employees.Img}}</td> -->
+        <td [ngStyle]="{'backgroundColor' :(employees.NumOfMonth * employees.Salary <= 3000) ? 'red' : 'blue' }">{{employees.Salary * employees.NumOfMonth + "$"}}</td>
+    </tr>
+    </tbody>
+</table>
+
+
